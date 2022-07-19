@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sleep
+spec:
+  containers:
+    - name: sleep
+      image: ubi8
+      command:
+      - sleep
+      - infinity
