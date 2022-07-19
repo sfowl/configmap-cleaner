@@ -19,7 +19,7 @@ OR
 $ oc apply -k ./config/default
 ```
 
-Afterwards all ConfigMap creation/update requests named `ouath-serving-cert` will have their `ca-bundle.crt` keys checked for private keys, and if found those keys will be removed.
+Afterwards all ConfigMap creation/update requests named `ouath-serving-cert` will have their `ca-bundle.crt` keys checked for private keys, and if found, those keys will be removed.
 
 Pre-existing ConfigMap objects that contain private keys will need to be removed manually.
 
@@ -32,7 +32,7 @@ After deployment, monitor the webhook status with:
 $ oc logs -n configmap-cleaner -f deploy/configmap-cleaner-manager
 ```
 
-Succesfull cleanings will look like:
+Succesful cleanings will look like:
 
 ```bash
 1.65821214371673e+09	INFO	entrypoint	config map create/update request received with private key, cleaning
