@@ -14,6 +14,13 @@ webhooks:
       path: /mutate-v1-configmap
   failurePolicy: Fail
   name: vconfigmap.kb.io
+  namespaceSelector:
+    matchExpressions:
+    - key: kubernetes.io/metadata.name
+      operator: In
+      values:
+      - openshift-config-managed
+      - openshift-console
   rules:
   - apiGroups:
     - ""
