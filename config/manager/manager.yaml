@@ -8,7 +8,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: manager
+  name: configmap-cleaner
   namespace: system
   labels:
     app: configmap-cleaner

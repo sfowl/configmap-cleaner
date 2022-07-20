@@ -3,6 +3,6 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
-  name: webhook
+  name: configmap-cleaner
   annotations:
     service.beta.openshift.io/inject-cabundle: "true"

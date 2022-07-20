@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: configmap-cleaner
-  name: manager-metrics-service
+  name: metrics-service
   namespace: system
 spec:
   ports:
