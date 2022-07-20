@@ -5,6 +5,7 @@ import (
 	"crypto/x509"
 	"encoding/json"
 	"encoding/pem"
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -25,17 +26,18 @@ type configMapMutator struct {
 // configMapMutator strips private keys from ca-bundles in configmaps
 func (v *configMapMutator) Handle(ctx context.Context, req admission.Request) admission.Response {
 	configMap := &corev1.ConfigMap{}
-	log := log.Log.WithName("entrypoint")
+	log := log.Log.WithName("configmap-cleaner")
 
 	err := v.decoder.Decode(req, configMap)
 	if err != nil {
 		return admission.Errored(http.StatusBadRequest, err)
 	}
 
+	log.Info(fmt.Sprintf("configmap %s create/update request received", configMap.Name))
 	if configMap.Name == "oauth-serving-cert" {
 		if cert, ok := configMap.Data["ca-bundle.crt"]; ok {
 			if strings.Contains(cert, "PRIVATE KEY") {
-				log.Info("config map create/update request received with private key, cleaning")
+				log.Info(fmt.Sprintf("configmap %s ca-bundle contains private key, cleaning", configMap.Name))
 
 				// shallow copy
 				mutatedConfigMap := configMap
