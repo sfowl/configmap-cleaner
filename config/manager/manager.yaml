@@ -28,7 +28,8 @@ spec:
       - command:
         - /manager
         args:
-        image: controller:latest
+        image: manager
+        imagePullPolicy: Always
         name: manager
         livenessProbe:
           httpGet:
