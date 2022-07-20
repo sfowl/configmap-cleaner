@@ -3,7 +3,7 @@ apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   creationTimestamp: null
-  name: configmap-cleaner
+  name: webhook
 webhooks:
 - admissionReviewVersions:
   - v1
