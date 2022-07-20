@@ -20,7 +20,7 @@ webhooks:
       operator: In
       values:
       - openshift-config-managed
-      - openshift-console
+        # - openshift-console
   rules:
   - apiGroups:
     - ""
