@@ -6,7 +6,7 @@ metadata:
   labels:
     app: configmap-cleaner
   name: controller-manager-metrics-monitor
-  namespace: system
+  namespace: configmap-cleaner
 spec:
   endpoints:
     - path: /metrics

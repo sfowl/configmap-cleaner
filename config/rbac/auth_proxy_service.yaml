@@ -4,7 +4,7 @@ metadata:
   labels:
     app: configmap-cleaner
   name: metrics-service
-  namespace: system
+  namespace: configmap-cleaner
 spec:
   ports:
   - name: https
