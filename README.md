@@ -2,7 +2,7 @@
 
 A Kubernetes mutating webhook that cleans ConfigMaps by removing private keys, before they are stored in etcd. This is a *demonstration* of a mitigation option for [CVE-2022-2403](https://access.redhat.com/security/cve/CVE-2022-2403).
 
-**THIS IS ONLY DEMO CODE, NOT OFFICIALLY SUPPORTED SOFTWARE. USE AT YOUR OWN RISK.**
+**THIS IS ONLY DEMO CODE, NOT OFFICIALLY SUPPORTED SOFTWARE.**
 
 
 ## Deploy
